@@ -10,13 +10,14 @@ interface SignUpProps{
 } 
 
 
-export function SignUp(){
+
+export function SignUp({ handleOpenRegisterInfo }: SignUpProps){
 
     return (
         <FormContainerSignUp>
             <h4>Identificação</h4>
             <form>
-                <input type="text" id="name" placeholder='Nome completo'/>
+                <input type="text" id="name" placeholder='Nome completo' />
                 <FieldOfCheckboxSocialName>
                     <input type='checkbox'/>
                     <span>Quero informar meu nome social</span>
@@ -28,10 +29,10 @@ export function SignUp(){
                     <input type="text" id="cellphone" placeholder='Telefone (com DDD)'/>
                 </CellInput>
                 <CpfInput>
-                    <input type="text" id="cpf" placeholder='CPF' />
+                    <input type="text" id="cpf" placeholder='CPF'/>
                 </CpfInput>
                 </CellAndCpfContainer>
-                <SubmitButtonContainer>
+                <SubmitButtonContainer onClick={handleOpenRegisterInfo}>
                         <button>Continuar</button>
                         <Image src={vectorsubmit} alt=""/>
                 </SubmitButtonContainer>

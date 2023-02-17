@@ -28,7 +28,19 @@ export default function Contact() {
     })
 
     function handleMailToUs(data:MailFormInputs){
-      console.log(data)
+      fetch('/api/contact', { 
+        method: 'POST', 
+        headers: { 
+          'Accept': 'application/json, text/plain, */*', 
+          'Content-Type': 'application/json' 
+        }, 
+        body: JSON.stringify(data) 
+      }).then((res) => { 
+        console.log('Resposta recebida') 
+        if (res.status === 200) { 
+          console.log('Resposta bem-sucedida!') 
+        } 
+      })
     }
 
     return (

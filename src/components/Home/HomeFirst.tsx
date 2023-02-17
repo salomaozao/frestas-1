@@ -19,7 +19,7 @@ export function HomeFirst(){
                     <LinkNavigation href={`/sobre`}>Sobre</LinkNavigation>
                     <LinkNavigation href={`/cursos`}>Cursos</LinkNavigation>
                     <LinkNavigation href={`/pessoas`}>Pessoas</LinkNavigation>
-                    <LinkNavigation href={`/agenda`}>Agenda</LinkNavigation>
+                    <LinkNavigation href={`/`}>Agenda</LinkNavigation>
                     <LinkNavigation href={`/`}>Publicações</LinkNavigation>
                     <LinkNavigation href={`/`}>Blog</LinkNavigation>
                     <LinkNavigation href={`/contato`}>Contato</LinkNavigation>

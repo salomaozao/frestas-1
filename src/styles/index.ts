@@ -20,6 +20,7 @@ export const { config, styled, globalCss, keyframes, getCssText, theme, createTh
             '42pix': '2.7rem',
             '52pix': '3.25rem',
             '58pix': '3.625rem',
+            '64pix': '4rem',
             '76pix': '4.5rem',
         },
     }
