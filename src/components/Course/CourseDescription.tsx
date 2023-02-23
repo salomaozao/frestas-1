@@ -11,7 +11,7 @@ export function CourseDescriptionActually(){
                 </DescriptionImageContainer>
                 <PriceAndSubscriptionButtonContainer>
                     <ValueOfCourse>
-                        <h6>Valor sugerido</h6>
+                        <h6>Valor integral</h6>
                         <span>R$ 350</span>
                     </ValueOfCourse>
                     <div>

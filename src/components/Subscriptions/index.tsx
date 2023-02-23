@@ -1,26 +1,8 @@
-import { SignUp } from "./FormsPages/SignUp";
-import { ContentOfThePage, SignUpContainer, TitleAndSubtitle } from "@/styles/pages/inscricao/signUp";
+import { ContentOfThePage, SignUpContainer, TitleAndSubtitle } from "@/styles/pages/inscricao";
 import { SummaryOfOrder } from "./SummaryOfOrder";
-import { RegisterInfo } from "./FormsPages/RegisterInfo";
-import { useState } from "react";
-import { CellAndCpfContainer, CellInput, CpfInput, FieldOfCheckboxSocialName,  FormContainerSignUp,  SubmitButtonContainer } from "@/styles/pages/inscricao/signUp";
-import Image from "next/image";
-import vectorsubmit from '../../../assets/registration/vector1.svg'
+import { FormikForm } from "./Form";
 
 export function SubscriptionForm(){
-    const [signUp, setSignUp] = useState(true)
-    const [registerInfo, setRegisterInfo] = useState(false)
-
-    function handleOpenRegisterInfo(){
-        setRegisterInfo(true);
-        setSignUp(false);
-    }
-    function handleCloseRegisterInfo(){
-        setRegisterInfo(false);
-        setSignUp(true);
-    }
-
-
     return(
         <>
             <SignUpContainer>
@@ -30,8 +12,7 @@ export function SubscriptionForm(){
                 </TitleAndSubtitle>
                 <ContentOfThePage>
                     <SummaryOfOrder/>
-
-                    { signUp? <SignUp handleOpenRegisterInfo={handleOpenRegisterInfo}/> : <RegisterInfo handleCloseRegisterInfo={handleCloseRegisterInfo} /> }
+                    <FormikForm/>
                 </ContentOfThePage>
             </SignUpContainer>
         </>

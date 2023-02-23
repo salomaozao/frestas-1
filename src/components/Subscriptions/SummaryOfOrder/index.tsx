@@ -1,4 +1,4 @@
-import { SummaryOfOrderContainer } from "@/styles/pages/inscricao/signUp";
+import { SummaryOfOrderContainer } from "@/styles/pages/inscricao/summary";
 
 export function SummaryOfOrder(){
     return(
@@ -20,7 +20,7 @@ export function SummaryOfOrder(){
             </p>
             <span>online</span>
             <div>
-                <span>Valor sugerido</span>
+                <span>Valor integral</span>
                 <p>R$350</p>
             </div>   
         </SummaryOfOrderContainer>
