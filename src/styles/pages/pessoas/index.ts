@@ -1,4 +1,6 @@
 import { styled } from "@/styles";
+import zIndex from "@mui/material/styles/zIndex";
+import Image from "next/image";
 import containerbeatriz from '../../../assets/people/containerbeatriz.svg'
 import containerlouise from '../../../assets/people/containerlouise.svg'
 
@@ -42,15 +44,32 @@ export const BeatrizBarrosContainer = styled('section', {
     gap: '5rem',
 })
 
-export const VectorAndImageContainer = styled('section',{
+export const VectorAndImageContainerBeatriz = styled('section',{
     display: 'flex',
     width: '100%',
     paddingLeft: '-5rem',
+   
+})
+export const VectorAndImageContainerLouise = styled('section',{
+    display: 'flex',
+    width: '100%',
+   
+})
+export const VectorImageOrange = styled(Image, {
+    marginLeft: '-20rem'
+})
 
-    img:{
-        alignSelf: 'start',
-        
-    }
+export const VectorImageYellow = styled(Image, {
+    marginBottom: '-50rem',
+    zIndex: '2',
+})
+
+export const VectorImagePurple = styled(Image, {
+    alignSelf: 'start',
+    marginTop: '-5rem',
+    marginRight: '-20rem',
+    marginLeft: '14rem',
+    zIndex: '2',
 })
 
 export const TextAboutContainerBase = styled('section', {
@@ -67,7 +86,6 @@ export const TextAboutBeatriz = styled(TextAboutContainerBase, {
     backgroundImage: `url(${containerbeatriz.src})`,
     backgroundSize: 'cover',
     marginTop: '5rem',
-    marginLeft: '-10rem',
 })
 
 export const TextAboutContent = styled('article', {
@@ -118,12 +136,12 @@ export const LouiseBelmonteContainer = styled('section', {
     alignItems: 'center',
     gap: '5rem',
     justifyContent: 'end',
+    img:{
+        zIndex: '1',
+    }
 })
 
 export const TextAboutLouise = styled(TextAboutContainerBase, {
     backgroundImage: `url(${containerlouise.src})`,
     backgroundSize: 'cover',
-    marginRight: '-20rem',
-
-    
 })

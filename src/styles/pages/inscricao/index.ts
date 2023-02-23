@@ -1,4 +1,5 @@
 import { styled } from "@/styles";
+import { Field } from "formik";
 
 export const PageSubscription = styled('main', {
     backgroundColor: '$white',
@@ -41,4 +42,7 @@ export const TitleAndSubtitle = styled('header', {
 export const ContentOfThePage = styled('main', {
     display: 'flex',
     width: '100%',
+})
+export const FieldCourse = styled(Field, {
+    display: 'none',
 })

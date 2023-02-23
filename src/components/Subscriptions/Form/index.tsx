@@ -1,10 +1,56 @@
-
+import { FieldCourse } from "@/styles/pages/inscricao";
 import { BirthAndSchool, BirthInput, CityInput, CpfAndPhone, CpfInput, EthnicityAndGender, EthnicityInput, FieldOfCheckboxSocialName, GenderInput, PhoneInput, SchoolInput, StateAndCity, StateInput } from "@/styles/pages/inscricao/stepper"
 import { Field } from "formik"
+import { useRouter } from "next/router";
 import { FormikStep } from "./Step"
 import { FormikStepper } from "./Stepper"
 
+export interface InputDataForm {
+        name: string,
+        socialName: boolean,
+        cpf: string,
+        birth: string,
+        school: string,
+        ethnicity: string,
+        gender: string,
+        state: string,
+        city: string,
+        email: string,
+        socialMedia: string,
+        howKnow: string,
+        haveDeficit: string,
+        whatDeficit: string,
+        accessibilityFeature: string,
+}
+
 export function FormikForm(){
+
+    const router = useRouter()
+
+    const handleSubmit = (async (values: any) => {
+        console.log(values)
+        //if (errorMessage) setErrorMessage('');
+    
+        try {
+          const res = await fetch('/api/users/create', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(values),
+          });
+          if (res.status === 200) {
+            router.push('/');
+          } else {
+            throw new Error(await res.text());
+          }
+        } catch (error) {
+          console.error(error);
+          //setErrorMessage(error.message);
+        }
+      });
+
+
     return (
         <FormikStepper
         initialValues={{
@@ -23,9 +69,11 @@ export function FormikForm(){
             haveDeficit: '',
             whatDeficit: '',
             accessibilityFeature: '',
+            course: 'course1',
+            course2: 'course2',
 
         }} onSubmit={async (values)=> {
-            console.log('values', values)
+            handleSubmit(values as any)
         }}>
                 <FormikStep label="Pessoal">
                     <Field name="name" placeholder='Nome completo'/>
@@ -43,7 +91,7 @@ export function FormikForm(){
                     </CpfAndPhone>
                     <BirthAndSchool>
                         <BirthInput>
-                            <Field type="date" name="birth" placeholder="Data de nascimento"/>
+                             <Field type="date" name="birth" placeholder="Data de nascimento"/> 
                         </BirthInput>
                         <SchoolInput>
                             <Field name="school" placeholder='escolaridade'/>
@@ -75,6 +123,7 @@ export function FormikForm(){
                     <Field name="haveDeficit" placeholder='Você possui alguma deficiência?'/>
                     <Field name="whatDeficit" placeholder='Se sim, qual?'/>
                     <Field name="accessibilityFeature" placeholder='Necessita de algum recurso de acessibilidade?'/>
+                    <FieldCourse name="course"/>
                     <p>Caso não possua, deixe os campos em branco</p>
                 </FormikStep>
         </FormikStepper>
