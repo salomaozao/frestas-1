@@ -27,6 +27,29 @@ export function FormikForm(){
 
     const router = useRouter()
 
+    const stripeRedirect = (async () => {
+        //console.log(values)
+        //if (errorMessage) setErrorMessage('');
+    
+        try {
+          const res = await fetch('/api/checkout', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            //body: JSON.stringify(values),
+          });
+          if (res.status === 200) {
+            
+          } else {
+            throw new Error(await res.text());
+          }
+        } catch (error) {
+          console.error(error);
+          //setErrorMessage(error.message);
+        }
+    });
+
     const handleSubmit = (async (values: any) => {
         console.log(values)
         //if (errorMessage) setErrorMessage('');
@@ -40,7 +63,7 @@ export function FormikForm(){
             body: JSON.stringify(values),
           });
           if (res.status === 200) {
-            router.push('/');
+            stripeRedirect()
           } else {
             throw new Error(await res.text());
           }
@@ -71,6 +94,7 @@ export function FormikForm(){
             accessibilityFeature: '',
             course: 'course1',
             course2: 'course2',
+            paymentStatus: 'aguardando',
 
         }} onSubmit={async (values)=> {
             handleSubmit(values as any)

@@ -7,8 +7,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { 
         name, socialName, phone, cpf, birth, school, ethnicity, gender,
         state, city, email, socialMedia, howKnow,
-        haveDeficit, whatDeficit, accessibilityFeature, course
+        haveDeficit, whatDeficit, accessibilityFeature, course, paymentStatus
     } = req.body
+
+    console.log(req.body)
   
     try {
       await fauna.query(
@@ -17,8 +19,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             name, socialName, phone, cpf, 
             birth, school, ethnicity, gender,
             state, city, email, socialMedia, howKnow,
-            haveDeficit, whatDeficit, accessibilityFeature, courses:{
-                course,
+            haveDeficit, whatDeficit, accessibilityFeature, 
+            courses:{
+                course:{
+                  name: course,
+                  paymentStatus          
+                }
             }
           },
         })

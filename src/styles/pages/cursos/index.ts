@@ -118,7 +118,7 @@ export const CourseMain = styled('article', {
 
 
 export const CourseMainInfo = styled('section', {
-    maxWidth: '70%',
+    width: '70%',
     display: 'flex',
     flexDirection: 'column',
     gap: '3rem',

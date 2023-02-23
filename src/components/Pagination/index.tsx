@@ -15,10 +15,6 @@ export function Pagination({ page }: PaginationProps){
                 <ButtonBackPagination><Image src={page === 'actually' ? actuallyback : pasteback} alt=""/></ButtonBackPagination>
                     <PaginationButton page={page}>1</PaginationButton>
                     <PaginationButton page={page}>2</PaginationButton>
-                    <PaginationButton page={page}>3</PaginationButton>
-                    <PaginationButton page={page}>4</PaginationButton>
-                    <PaginationButton page={page}>5</PaginationButton>
-                    <PaginationButton page={page}>...</PaginationButton>
                 <ButtonNextPagination><Image src={page === 'actually' ? actuallynext : pastenext} alt=""/></ButtonNextPagination>
             </PaginationContainer>
         )      
