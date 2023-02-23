@@ -11,8 +11,8 @@ export const HomeContainerThird = styled("main", {
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",
-	width: "100vw",
-	// height: '100vh',
+	// width: "100vw",
+	height: "100vh",
 });
 export const ContentTopics = styled("section", {
 	width: "75%",
@@ -41,7 +41,7 @@ export const ContentContainer = styled("section", {
 	backgroundSize: "cover",
 	backgroundRepeat: "no-repeat",
 
-	width: "100%",
+	// width: "100%",
 	padding: "9rem",
 
 	display: "flex",
