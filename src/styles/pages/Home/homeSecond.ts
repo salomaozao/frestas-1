@@ -7,7 +7,7 @@ export const HomeContainerSecond = styled('main', {
     display: 'flex',
     justifyContent: 'space-between',
     height: '100vh',
-    width: '100vw',
+    // width: '100vw',
 })
 export const TextsContainer = styled('div', {
     display: 'flex',
